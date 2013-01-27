@@ -74,21 +74,26 @@ set(CMAKE_JAVA_INCLUDE_PATH
 )
 
 
+#these should go into the jar as well:
+#  MANIFEST.MF
+#  plugins_mmstudio.config
+#  plugins_reader.config
+
 
 add_jar(mmstudio 
   *.java
-  com/quirkware/guid/*.java
-  org/jeditsyntax/*.java
-  org/json/*.java
-  org/micromanager/*.java
-  org/micromanager/api/*.java
-  org/micromanager/acquisition/*.java
-  org/micromanager/conf2/*.java
-  org/micromanager/graph/*.java
+  com/quirkware/guid/*
+  org/jeditsyntax/*
+  org/json/*
+  org/micromanager/*
+  org/micromanager/api/*
+  org/micromanager/acquisition/*
+  org/micromanager/conf2/*
+  org/micromanager/graph/*
   org/micromanager/icons/*
-  org/micromanager/navigation/*.java
-  org/micromanager/script/*.java
-  org/micromanager/utils/*.java
+  org/micromanager/navigation/*
+  org/micromanager/script/*
+  org/micromanager/utils/*
 )
 
 
