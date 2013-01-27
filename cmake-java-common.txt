@@ -1,0 +1,60 @@
+
+find_package( Java REQUIRED )
+include( UseJava )
+
+
+find_jar(JAR_ABSOLUTELAYOUT AbsoluteLayout      PATHS ${CMAKE_CURRENT_SOURCE_DIR}/../3rdpartypublic/classext/)
+find_jar(JAR_BSH            bsh-2.0b4           PATHS ${CMAKE_CURRENT_SOURCE_DIR}/../3rdpartypublic/classext/)
+find_jar(JAR_CLOJURE        clojure             PATHS ${CMAKE_CURRENT_SOURCE_DIR}/../3rdpartypublic/classext/)
+find_jar(JAR_CLOOJ          clooj               PATHS ${CMAKE_CURRENT_SOURCE_DIR}/../3rdpartypublic/classext/)
+find_jar(JAR_COMMONS_MATH   commons-math-2.0    PATHS ${CMAKE_CURRENT_SOURCE_DIR}/../3rdpartypublic/classext/)
+find_jar(JAR_CORE_CACHE     core.cache          PATHS ${CMAKE_CURRENT_SOURCE_DIR}/../3rdpartypublic/classext/)
+find_jar(JAR_CORE_MEMOIZE   core.memoize        PATHS ${CMAKE_CURRENT_SOURCE_DIR}/../3rdpartypublic/classext/)
+find_jar(JAR_DATA_JSON      data.json           PATHS ${CMAKE_CURRENT_SOURCE_DIR}/../3rdpartypublic/classext/)
+find_jar(JAR_GPROTO         gproto              PATHS ${CMAKE_CURRENT_SOURCE_DIR}/../3rdpartypublic/classext/)
+find_jar(JAR_IJ             ij                  PATHS ${CMAKE_CURRENT_SOURCE_DIR}/../3rdpartypublic/classext/)
+find_jar(JAR_JCOMMON        jcommon-1.0.16      PATHS ${CMAKE_CURRENT_SOURCE_DIR}/../3rdpartypublic/classext/)
+find_jar(JAR_JFREECHART     jfreechart-1.0.13   PATHS ${CMAKE_CURRENT_SOURCE_DIR}/../3rdpartypublic/classext/)
+find_jar(JAR_LOCI_COMMON    loci-common         PATHS ${CMAKE_CURRENT_SOURCE_DIR}/../3rdpartypublic/classext/)
+find_jar(JAR_LWM            lwm                 PATHS ${CMAKE_CURRENT_SOURCE_DIR}/../3rdpartypublic/classext/)
+find_jar(JAR_OME_XML        ome-xml             PATHS ${CMAKE_CURRENT_SOURCE_DIR}/../3rdpartypublic/classext/)
+find_jar(JAR_SCIFIO         scifio              PATHS ${CMAKE_CURRENT_SOURCE_DIR}/../3rdpartypublic/classext/)
+find_jar(JAR_SLF4J_API      slf4j-api-1.7.1     PATHS ${CMAKE_CURRENT_SOURCE_DIR}/../3rdpartypublic/classext/)
+find_jar(JAR_SUBSTANCE      substance           PATHS ${CMAKE_CURRENT_SOURCE_DIR}/../3rdpartypublic/classext/)
+find_jar(JAR_SWING_LAYOUT   swing-layout-1.0.4  PATHS ${CMAKE_CURRENT_SOURCE_DIR}/../3rdpartypublic/classext/)
+find_jar(JAR_SWINGX         swingx-0.9.5        PATHS ${CMAKE_CURRENT_SOURCE_DIR}/../3rdpartypublic/classext/)
+find_jar(JAR_TRIDENT        trident             PATHS ${CMAKE_CURRENT_SOURCE_DIR}/../3rdpartypublic/classext/)
+find_jar(JAR_TSFPROTO       TSFProto            PATHS ${CMAKE_CURRENT_SOURCE_DIR}/../3rdpartypublic/classext/)
+
+
+find_jar(JAR_LOCI_TOOLS     loci_tools          PATHS ${CMAKE_CURRENT_SOURCE_DIR}/../3rdpartypublic/loci/)                  
+set(JAR_MMCORE ${CMAKE_BINARY_DIR}/MMCoreJ_wrap/MMCoreJ.jar)
+set(JAR_MMSTUDIO ${CMAKE_BINARY_DIR}/mmstudio/src/mmstudio.jar)
+
+set(CMAKE_JAVA_INCLUDE_PATH 
+ ${JAR_ABSOLUTELAYOUT}
+ ${JAR_BSH}
+ ${JAR_CLOJURE}
+ ${JAR_CLOOJ}
+ ${JAR_COMMONS_MATH}
+ ${JAR_CORE_CACHE}
+ ${JAR_CORE_MEMOIZE}
+ ${JAR_DATA_JSON}
+ ${JAR_GPROTO}
+ ${JAR_IJ}
+ ${JAR_JCOMMON}
+ ${JAR_JFREECHART}
+ ${JAR_LOCI_COMMON}
+ ${JAR_LWM}
+ ${JAR_OME_XML}
+ ${JAR_SCIFIO}
+ ${JAR_SLF4J_API}
+ ${JAR_SUBSTANCE}
+ ${JAR_SWING_LAYOUT}
+ ${JAR_SWINGX}
+ ${JAR_TRIDENT}
+ ${JAR_TSFPROTO}
+ ${JAR_LOCI_TOOLS}
+ ${JAR_MMCORE}
+ 
+)

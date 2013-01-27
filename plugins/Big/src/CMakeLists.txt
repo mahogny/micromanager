@@ -1,9 +1,9 @@
-include (../../cmake-common.txt)
+include (../../cmake-java-common.txt)
 
 
 
 add_jar(Big
-  edu/umassmed/big/*.java
+  */*/*/*.java
 )
 
 

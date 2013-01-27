@@ -1,9 +1,9 @@
-include (../../cmake-common.txt)
+include (../../cmake-java-common.txt)
 
 
 
 add_jar(BFCorrector  
-  org/micromanager/bfcorrector/*.java
+  */*/*/*.java
 )
 
 
