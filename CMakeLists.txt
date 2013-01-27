@@ -3,6 +3,7 @@ project(MMLIBS)
 
 ## Options
 option(USE_SWIG_BINDINGS "Java and Python bindings" ON)
+option(BUILD_MMSTUDIO "MM studio" ON)
 
 ## Main package
 set(Boost_USE_STATIC_LIBS OFF)
@@ -25,6 +26,11 @@ if(USE_SWIG_BINDINGS)
   find_package(SWIG REQUIRED)
   add_subdirectory(MMCoreJ_wrap)
   add_subdirectory(MMCorePy_wrap)
+endif()
+
+## MM studio
+if(BUILD_MMSTUDIO)
+  add_subdirectory(mmstudio/src)
 endif()
 
 ## Documentation
