@@ -1,9 +1,14 @@
 cmake_minimum_required(VERSION 2.6)
 project(MMLIBS)
 
+
+include(LibFindMacros.cmake)
+
+
 ## Options
 option(USE_SWIG_BINDINGS "Java and Python bindings" ON)
 option(BUILD_MMSTUDIO "MM studio" ON)
+option(BUILD_MMSTUDIO_PLUGINS "MM studio plugins" ON)
 
 ## Main package
 set(Boost_USE_STATIC_LIBS OFF)
@@ -22,7 +27,7 @@ add_subdirectory(MMCore)
 
 # TODO Make SimpleAutoFocus DeviceAdapter include
 # ${PROJECT_SOURCE_DIR}/Util
-#add_subdirectory(DeviceAdapters)
+add_subdirectory(DeviceAdapters)
 
 ## Bindings
 if(USE_SWIG_BINDINGS)
@@ -45,18 +50,30 @@ ENDMACRO()
 
 ## MM studio
 if(BUILD_MMSTUDIO)
+
   add_subdirectory(mmstudio/src)
-#  HEADER_DIRECTORIES(retlist)
-  file (GLOB retlist "plugins/*/src")
-  foreach(PLUGIN ${retlist})
-    message(STATUS ${PLUGIN})
-    add_subdirectory(${PLUGIN})
-  endforeach()
-#  include_directories(plugins/*/src)
-#  add_subdirectory(plugins/BFCorrector/src)
+
+  if(BUILD_MMSTUDIO_PLUGINS)
+    file (GLOB retlist "plugins/*/src")
+    foreach(PLUGIN ${retlist})
+      add_subdirectory(${PLUGIN})
+    endforeach()
+  endif()
 endif()
+
+
 
 ## Documentation
 #add_subdirectory(DeviceKit)
 #add_subdirectory(Tutorial)
 #add_subdirectory(doc)
+
+
+
+
+#all dep jar-files into
+#ImageJ/plugins/
+
+#then into
+# ImageJ/plugins/Micro-Manager/
+# MMAcqEngine.jar  MMJ_.jar

@@ -14,6 +14,7 @@ add_jar(mmstudio
   org/json/*
   org/micromanager/*
   org/micromanager/api/*
+  org/micromanager/api/MMWindow.java   ## why do I need to name it specifically? scary!!!
   org/micromanager/acquisition/*
   org/micromanager/conf2/*
   org/micromanager/graph/*
